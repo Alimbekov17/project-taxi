@@ -21,6 +21,9 @@ public class Taxi {
         this.taxiType = taxiType;
     }
 
+    public Taxi() {
+    }
+
     public Long getId() {
         return id;
     }
@@ -73,10 +76,11 @@ public class Taxi {
     public String toString() {
         return "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" +
                 "\nID    : " + id +
-                "\nModel : " + model + '\'' +
-                "\nNumber: " + number + '\'' +
-                "\nColor : " + colour + '\'' +
-                "\nYear  : " + year +
-                "\nType  : " + taxiType;
+                "\nModel : " + model +
+                "\nNumber: " + number +
+                "\nColor : " + colour +
+                "\nYear  : " + year.getYear() +
+                "\nType  : " + taxiType.name() + "\n"
+                + taxiType;
     }
 }
