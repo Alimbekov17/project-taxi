@@ -1,0 +1,143 @@
+Index: src/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>public class Main {\n    public static void main(String[] args) {\n\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Main.java b/src/Main.java
+--- a/src/Main.java	(revision 44aaa3506e22d710762f9dbac33b0c21586bad09)
++++ b/src/Main.java	(date 1672947825177)
+@@ -1,5 +1,112 @@
++import model.Taxi;
++import service.impl.TaxiServiceImpl;
++
++import java.util.LinkedList;
++import java.util.List;
++import java.util.Scanner;
++
+ public class Main {
+     public static void main(String[] args) {
++        chooseCommand();
++    }
++    public static void chooseCommand() {
++        TaxiServiceImpl taxiService = new TaxiServiceImpl();
++        List<Taxi> taxis = new LinkedList<>();
++        while (true) {
++            services();
++            String choice = new Scanner(System.in).next();
++            switch (choice) {
++                case "1" -> {
++                    clientServiceCommands();
++                    String enter = new Scanner(System.in).next();
++                    switch (enter) {
++
++                    }
++                }
++                case "2" -> {
++                    driverServiceCommands();
++                    String enter = new Scanner(System.in).next();
++                    switch (enter) {
++
++                    }
++                }
++                case "3" -> {
++                    taxiServiceCommands();
++                    String enter = new Scanner(System.in).next();
++                    switch (enter) {
++                        case "1" -> System.out.println(taxiService.add(taxis));
++                        case "2" -> {
++                            System.out.print("Enter a letter: ");
++                            String model = new Scanner(System.in).next();
++                            taxiService.findByInitialLetter(model).forEach(System.out::println);
++                        }
++                        case "3" -> System.out.println(taxiService.grouping());
++                        case "4" -> {
++                            System.out.print("Enter taxi type: ");
++                            String taxiType = new Scanner(System.in).next();
++                            taxiService.filterByTaxiType(taxiType).forEach(System.out::println);
++                        }
++                        case "5" -> {
++                            System.out.println("~~~~~ Update information ~~~~~");
++                            System.out.print("Enter your ID: ");
++                            Long id = new Scanner(System.in).nextLong();
++                            taxiService.update(id);
++                        }
++                        default -> System.out.println("Wrong command!");
++                    }
++                }
++            }
++        }
++    }
++    public static void services() {
++        System.out.println("""
++                *********** Services ***********
++                1- Client Service
++                2- Driver Service
++                3- Taxi Service
++                """);
++        System.out.print("Enter: ");
++    }
++    public static void clientServiceCommands() {
++        System.out.println("""
++                *********** Commands ***********
++                1- Add new client
++                2- Find client by name
++                3- Remove client by ID
++                4- Order a taxi
++                5- Get clients age
++                6- Sort client list
++                7- Go ot main
++                """);
++        System.out.print("Enter: ");
++
++    }
++    public static void driverServiceCommands() {
++        System.out.println("""
++                *********** Services ***********
++                1- Add new driver
++                2- Find driver by ID
++                3- Find driver by Name
++                4- Assign taxi to Driver
++                5- Change taxi or Driver
++                6- Get Driver by taxi model
++                7- Update driver information
++                8- Go ot main
++                """);
++        System.out.print("Enter: ");
++
++    }
++    public static void taxiServiceCommands() {
++        System.out.println("""
++                *********** Services ***********
++                1- Add new taxi
++                2- Find car by initial letter
++                3- Group taxis by type
++                4- Filter taxis by type
++                5- Update taxi
++                6- Go ot main
++                """);
++        System.out.print("Enter: ");
+ 
+     }
+ }
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"10daecc3-1e59-48ea-bbc4-547252daed61\" name=\"Changes\" comment=\"\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Enum\" />\n        <option value=\"Interface\" />\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"orgin_feature_driver_class_and_gender\" />\n      </map>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectId\" id=\"2JtSH8Yi9WBzM2oQ0oHR4fPD6Tb\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\n  }\n}</component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"10daecc3-1e59-48ea-bbc4-547252daed61\" name=\"Changes\" comment=\"\" />\n      <created>1672895799736</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1672895799736</updated>\n      <workItem from=\"1672895800956\" duration=\"2213000\" />\n      <workItem from=\"1672919070842\" duration=\"357000\" />\n    </task>\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 44aaa3506e22d710762f9dbac33b0c21586bad09)
++++ b/.idea/workspace.xml	(date 1672950884531)
+@@ -5,7 +5,7 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="10daecc3-1e59-48ea-bbc4-547252daed61" name="Changes" comment="">
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
