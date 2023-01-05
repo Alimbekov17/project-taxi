@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10daecc3-1e59-48ea-bbc4-547252daed61" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/model/Driver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/interfaces/DriverService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Driver.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,5 +66,9 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
   </component>
 </project>
